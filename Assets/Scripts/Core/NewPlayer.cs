@@ -83,7 +83,6 @@ public class NewPlayer : PhysicsObject
     // Start is called before the first frame update
     void Start()
     {
-        ThisIsATest();
         DontDestroyOnLoad(gameObject);
         gameObject.name = "NewPlayer";
 
@@ -246,10 +245,7 @@ public class NewPlayer : PhysicsObject
         transform.position = GameObject.Find("SpawnLocation").transform.position;
     }
 
-    public void ThisIsATest()
-    {
-        Debug.Log("Just Testing");
-    }
+
 
 }
     
