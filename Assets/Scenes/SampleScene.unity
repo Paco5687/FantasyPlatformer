@@ -712,11 +712,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263722530}
-  - component: {fileID: 263722529}
-  - component: {fileID: 263722528}
-  - component: {fileID: 263722531}
-  - component: {fileID: 263722532}
+  - component: {fileID: 263722536}
   - component: {fileID: 263722533}
+  - component: {fileID: 263722528}
+  - component: {fileID: 263722532}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -776,33 +775,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &263722529
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263722527}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!4 &263722530
 Transform:
   m_ObjectHideFlags: 0
@@ -812,47 +784,12 @@ Transform:
   m_GameObject: {fileID: 263722527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.6, y: -2.55776, z: 0.14090364}
+  m_LocalPosition: {x: -11.67, y: -2.21, z: 0.14090364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &263722531
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263722527}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.059860706, y: -0.059860587}
-  m_Size: {x: 1.0766487, y: 2.4068835}
-  m_Direction: 0
 --- !u!95 &263722532
 Animator:
   serializedVersion: 5
@@ -886,50 +823,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86a899254f64ac48948585e7be41ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minGroundNormalY: 0.65
-  gravityModifier: 1
+  playerSpeed: 2
+  jumpHeight: 1
+  gravityValue: -9.81
   playerArmor: 0
   playerAttackDuration: 0
   playerAttackSpeed: 0
   playerAttackPower: 0
-  playerBlock: 0
   playerCritical: 0
-  playerDefense: 0
-  playerDodge: 0
-  playerEnergy: 0
   playerHealth: 100
   playerMaxHealth: 100
   playerMaxDamage: 0
   playerMinDamage: 0
-  ammo: 0
-  coinsCollected: 0
-  playerWeaponEquipped: 0
-  playerWeapon: 
-  crouch: 0
-  crouchSpeed: 2
-  jumpPower: 10
-  maxSpeed: 10
-  tryingToStand: 0
-  gun: {fileID: 0}
-  laser: {fileID: 0}
-  laserSpeed: 0
-  shootPoint: {fileID: 0}
-  fireRate: 0
-  readyForNextShot: 0
   animator: {fileID: 0}
-  attackBox: {fileID: 0}
-  rayCastLayerMask:
+--- !u!143 &263722536
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263722527}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  rayCastLength: 0.45
-  gunHolder: {fileID: 0}
-  crouchBox: {fileID: 0}
-  facingRight: 1
-  horizontalValue: 0
-  inventoryItemBlank: {fileID: 0}
-  keyGemSprite: {fileID: 0}
-  keySprite: {fileID: 0}
-  weaponBlank: {fileID: 0}
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2.38
+  m_Radius: 0.53
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0.05, y: -0.09, z: 0}
 --- !u!1 &296810238
 GameObject:
   m_ObjectHideFlags: 0
