@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 67179446}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2189884, y: 4.3516245, z: -10}
+  m_LocalPosition: {x: 4.226465, y: 4.3516245, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -887,13 +887,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 1
+  gravityModifier: 6.5
   attackDuration: 0
   attackPower: 50
-  jumpPower: 9.5
+  jumpPower: 26.5
   health: 100
   playerMaxHealth: 100
-  maxSpeed: 5
+  maxSpeed: 12
   ammo: 0
   coinsCollected: 0
   attackBox: {fileID: 0}
