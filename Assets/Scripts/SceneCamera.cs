@@ -7,14 +7,14 @@ public class SceneCamera : MonoBehaviour
 {
 
     [Header("References")]
-   [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
+    [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
 
 
     // Start is called before the first frame update
     void Start()
     {
         //set cinemachineVirtualCamera.Target = NewPlayer.Instance
-        //cinemachineVirtualCamera.Follow = Player.transform;
+        cinemachineVirtualCamera.Follow = NewPlayer.Instance.transform;
     }
 
     // Update is called once per frame

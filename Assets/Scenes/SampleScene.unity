@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 67179446}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2361317, y: 4.3516245, z: -10}
+  m_LocalPosition: {x: 4.2189884, y: 4.3516245, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 67179446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3dee0c2141a874469763ca767931483, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f0cc0edc840c8b4aa3853ecb4624619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cinemachineVirtualCamera: {fileID: 1611288060}
@@ -712,8 +712,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263722530}
-  - component: {fileID: 263722536}
+  - component: {fileID: 263722534}
   - component: {fileID: 263722533}
+  - component: {fileID: 263722535}
   - component: {fileID: 263722528}
   - component: {fileID: 263722532}
   m_Layer: 0
@@ -811,38 +812,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &263722533
-MonoBehaviour:
+--- !u!70 &263722533
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263722527}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86a899254f64ac48948585e7be41ea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 2
-  jumpHeight: 1
-  gravityValue: -9.81
-  playerArmor: 0
-  playerAttackDuration: 0
-  playerAttackSpeed: 0
-  playerAttackPower: 0
-  playerCritical: 0
-  playerHealth: 100
-  playerMaxHealth: 100
-  playerMaxDamage: 0
-  playerMinDamage: 0
-  animator: {fileID: 0}
---- !u!143 &263722536
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263722527}
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -851,17 +829,77 @@ CharacterController:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05, y: -0.08}
+  m_Size: {x: 1.08, y: 2.41}
+  m_Direction: 0
+--- !u!50 &263722534
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263722527}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 2
+--- !u!114 &263722535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263722527}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2.38
-  m_Radius: 0.53
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0.05, y: -0.09, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaffcb9c5367124e8e17556e4bedaec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minGroundNormalY: 0.65
+  gravityModifier: 1
+  attackDuration: 0
+  attackPower: 50
+  jumpPower: 9.5
+  health: 100
+  playerMaxHealth: 100
+  maxSpeed: 5
+  ammo: 0
+  coinsCollected: 0
+  attackBox: {fileID: 0}
+  inventoryItemBlank: {fileID: 0}
+  keyGemSprite: {fileID: 0}
+  keySprite: {fileID: 0}
 --- !u!1 &296810238
 GameObject:
   m_ObjectHideFlags: 0
